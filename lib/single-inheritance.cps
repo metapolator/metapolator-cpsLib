@@ -1,52 +1,53 @@
 /* boilerplate single inheritance */
 
-/* needs "base" of point-child-base.cps */
-
 glyph {
-    advanceWidth: base:advanceWidth;
-    advanceHeight: base:advanceHeight;
+    width: baseNode:width;
+    height: baseNode:height;
 }
 
-point > * {
-    inLength: base:inLength;
-    outLength: base:outLength;
+center > * {
+    inLength: baseNode:inLength;
+    outLength: baseNode:outLength;
 
-    inTension: base:inTension;
-    outTension: base:outTension;
+    inTension: baseNode:inTension;
+    outTension: baseNode:outTension;
 
-    inDirIntrinsic: base:inDirIntrinsic;
-    outDirIntrinsic: base:outDirIntrinsic;
+    inDirIntrinsic: baseNode:inDirIntrinsic;
+    outDirIntrinsic: baseNode:outDirIntrinsic;
 }
 
-point > center {
-    on: base:on;
-    in: base:in;
-    out: base:out;
+center {
+    on: baseNode:on;
+    in: baseNode:in;
+    out: baseNode:out;
 }
 
 contour > p {
-    on: base:on;
+    on: baseNode:on;
 
-    inDir: base:inDir;
-    outDir: base:outDir;
+    inDir: baseNode:inDir;
+    outDir: baseNode:outDir;
 
-    inTension: base:inTension;
-    outTension: base:outTension;
+    inTension: baseNode:inTension;
+    outTension: baseNode:outTension;
+
+    inLength: baseNode:inLength;
+    outLength: baseNode:outLength;
 }
 
-point > left, point > right {
-    onDir: base:onDir;
-    onLength: base:onLength;
+center > left, center > right {
+    onDir: baseNode:onDir;
+    onLength: baseNode:onLength;
 }
 
 /* terminals overide of skeleton2outline */
-point:i(0) > left,
-point:i(0) > right {
-    inDir: base:inDir;
+center:i(0) > left,
+center:i(0) > right {
+    inDir: baseNode:inDir;
 }
 
-point:i(-1) > right,
-point:i(-1) > left {
-    outDir: base:outDir;
+center:i(-1) > right,
+center:i(-1) > left {
+    outDir: baseNode:outDir;
 }
 /* end boilerplate single inheritance */
