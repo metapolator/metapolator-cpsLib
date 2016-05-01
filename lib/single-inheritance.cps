@@ -50,4 +50,9 @@ center:i(-1) > right,
 center:i(-1) > left {
     outDir: baseNode:outDir;
 }
+
+component {
+    transformation: baseNode:transformation;
+    baseGlyphName: baseNode:baseGlyphName;
+}
 /* end boilerplate single inheritance */

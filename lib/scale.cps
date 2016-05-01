@@ -1,5 +1,5 @@
 /* scale the centerline */
-center, contour > p{
+center, contour > p, component{
     /* this way we can override scale and still have access to it's
         * original value
         */
@@ -29,7 +29,7 @@ contour > p {
 }
 
 component {
-    transformation: translate * baseNode:transformation;
+    transformation: transform * baseNode:transformation;
 }
 
 /* define default higher level properties, override in your master */
